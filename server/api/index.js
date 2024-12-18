@@ -25,8 +25,7 @@ const app = express();
 
 const sqlstore = new MssqlStore(adminconf)
 
-
-app.use(cors()); 
+app.use(cors("https://healthy-habit-tracker-web-p4j3okolx-marcusfc3s-projects.vercel.app")); 
 app.use(bodyParser.json());
 app.use(express.json());
 app.use(helmet())

@@ -13,7 +13,7 @@ const cookieSession = require("cookie-session");
 const passport = require("passport");
 const {Strategy} = require("passport-local");
 
-const loginController = require("../controllers/login.controller"); 
+const loginController = require("./controllers/login.controller"); 
 
 const loginRouter = express.Router();
 
