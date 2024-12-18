@@ -1,0 +1,26 @@
+{
+  "name": "healthy-habit-tracker-web-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "npm run build --prefix client && npm start --prefix server",
+    "install-client": "npm install --prefix client",
+    "install-server": "npm install --prefix server",
+    "install": "npm run install-client && npm install-server",
+    "test": "npm run test --prefix && npm run text --prefix client",
+    "server": "npm run watch --prefix server",
+    "client": "npm start --prefix client",
+    "watch": "npm run server & npm run client"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "build": "^0.1.4",
+    "create-react-app": "^1.2.1",
+    "mssql-session-store": "^1.0.0",
+    "vercel": "^39.2.2"
+  }
+}

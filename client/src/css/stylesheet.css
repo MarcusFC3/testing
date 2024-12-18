@@ -1,0 +1,127 @@
+/*Light theme colors*/
+:root{
+    --background: white;
+    --secondary-background: rgba(225, 225, 225, 0.719);
+    --main-text-color: black;
+    --secondary-text-color: grey;
+}
+body{ /*Temporary background change to be able to see better*/
+    background-color: var(--secondary-background);
+}
+.container{
+    background-color: var(--background);
+}
+p{
+    padding: 10px;
+}
+form{
+    background-color: rgb(175, 175, 175);
+    margin: 5px 0px;
+    padding: 5px;
+    border: 2px solid black;
+}
+form > p{
+    padding: 0px;
+}
+form > p > label{
+    display: flex;
+}
+
+table{
+    overflow: auto;
+    text-align: center;
+}
+
+tr{
+    margin:auto;
+    padding: auto;
+}
+
+th{
+    border: 3px solid black;
+    margin: auto;
+    padding: auto;
+    background-color: rgb(184, 184, 184);
+}
+
+td{
+    border: 2px solid black;
+    margin: auto;
+    padding: auto;
+}
+
+.home_text{
+    margin: auto;
+    background-color: rgb(175, 175, 175);
+}
+.Activity{
+    border: 1px solid black;
+    display:inline-block;
+}
+.activityForm{
+    color: black;
+    text-decoration: none;
+    display:none;
+}
+.progress-bar-holder{
+    padding: 2px;
+    background-color: rgb(221, 221, 221);
+    width: 200px;
+    height: 20px;
+    border: 2px solid black;
+}
+.progress_bar{
+    padding: 6px;
+    background-color: green;
+    width: 50%;
+}
+.homebackgroundimage{
+    font-family: Arial, Helvetica, sans-serif;
+    height: 200px;
+    background-image: url("../../public/img/testbackgroundimg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    margin: 5px 0px;
+}
+.homebackgroundimagetext{
+    width: inherit;
+    padding: 70px;
+    backdrop-filter: blur(5px);
+    font-size: 2.5em;
+}
+.navbar-custom{
+    background-color: var(--secondary-background);
+    backdrop-filter: blur(15px);
+}
+nav{
+    display: block;
+    font-size: 1.25em;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 10px;
+    background-color: var(--secondary-background);
+    position: fixed;
+    
+}
+nav li{
+    text-align: center;
+    display: inline;
+    list-style-type: none;
+}
+nav a:link{
+    color:#0E083B;
+    text-decoration:none;
+}
+nav a:visited{
+    color:#0E083B;
+}
+nav a:hover{
+    text-decoration:underline;
+    color: #5B5393;
+}
+
+footer{
+    background-color: rgb(136, 136, 136);
+    margin: 5px 0px;
+    padding: 5px;
+}

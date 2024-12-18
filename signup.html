@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simply Health Sign Up</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/stylesheet.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" aria-disabled="true"><span id="navbarBrand">
+                                <!-- <img src="img/arrow-right-square-fill.svg" alt="right arrow" height="35"> -->
+                                Simply Health
+                            </span></a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="index.html">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="activities.html">Activities</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="leaderboards.html">leaderboards</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        Dropdown
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="login.html">Login</a></li>
+                                        <li></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <form id="sign_up_form" action="" method="post">
+                    <h4>Sign Up</h4>
+                    <div>
+                        <label for="email_address">Email:</label>
+                        <input type="email" name="email_address" id="email_address" placeholder="Enter your email" required autofocus autocomplete="on">
+                        <span class="required">*</s pan>
+                    </div>
+                    <div>
+                        <label for="create_password">Password:</label> 
+                        <input type="password" name="create_password" id="create_password" placeholder="Enter a password" required>
+                        <span class="required">*</span>
+                    </div>
+                    <div>
+                        <label for="verify_password">Verify Password:</label>
+                        <input type="password" name="verify_password" id="verify_password" placeholder="Verify the password" required>
+                        <span class="required">*</span>
+                    </div>
+
+                    <input type="submit" value="Sign Up" id="submit">
+
+                </form>
+            </div>
+        </div>
+    </div> <!--Container Div-->
+
+    <footer>
+        
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>"
+
+</body>
