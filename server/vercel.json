@@ -1,6 +1,8 @@
 { 
     "version": 2,
-
+    "engines": {
+        "node": "20.x"
+      },
 "routes": [
     {
       "src": "/(.*)",
