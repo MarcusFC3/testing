@@ -25,11 +25,7 @@ const app = express();
 
 const sqlstore = new MssqlStore(adminconf)
 
-app.use( (req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', '*'); 
-res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-})
+
 app.use(bodyParser.json());
 app.use(express.json());
 app.use(helmet())
@@ -139,7 +135,12 @@ app.use(
       noSqlLevel: 5, 
     })
   );
-
+  app.use( (req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*'); 
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  next();
+  })
 
 //possibly add this to login router/controller?
 app.get("/auth/google", (req, res) => { //endpoint for google authentication
