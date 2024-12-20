@@ -172,6 +172,39 @@ app.get("/asd", (req, res)=>{
 
 app.use("/activities", checkLoggedIn, activitiesRouter)
 app.use("/login", loginRouter);
+
+
+//login routes
+app.post("/", loginController.login, passport.authenticate('local'), (req, res) => {
+    // This code runs after authentication has been completed
+  
+    console.log("Authentication successful");
+  
+    // You can now safely send a response, since the user has been authenticated
+    return res.status(200).json({
+      message: "Authentication successful",
+      user: req.user  // You can access the authenticated user from req.user
+    });
+  });
+
+app.post("/pwdreset", loginController.passwordReset)
+
+
+
+app.post("/signup/user", loginController.signupUser)//maybe allow leaders to signup users with this?
+
+app.post("/signup/company", loginController.signupCompany)
+
+app.post("/create/team", loginController.createTeam)
+
+app.post("/changeteam", loginController.switchUserTeam)
+
+function createSession(req, res) {
+
+}
+module.exports = loginRouter; 
+
+
 app.use("/user", userRouter);
 app.get("/api", (req, res) => {return res.send("hyecuh")})    
 
