@@ -1,5 +1,5 @@
 "use strict"
-const SocksProxyAgent = require("socks-proxy-agent")
+const {SocksProxyAgent} = require("socks-proxy-agent")
 
 const agent = new SocksProxyAgent("http://fixie:mM4D7MBMmG6r9p4@criterium.usefixie.com:80")
 
