@@ -117,7 +117,8 @@ passport.deserializeUser((user, done)=>{
 })
 
 
-
+app.use(cors())
+app.options("*", cors())
 
 function checkLoggedIn(req, res, next){
   console.log(req.session)
