@@ -171,7 +171,7 @@ app.get("/asd", (req, res)=>{
 })
 
 app.use("/activities", checkLoggedIn, activitiesRouter)
-app.use("/login", loginRouter);
+app.use("/api/login", loginRouter);
 app.use("/user", userRouter);
 app.get("/", (req, res) => {return res.send(req.user)})    
 
