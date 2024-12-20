@@ -141,7 +141,7 @@ function viewTopUsers(req, res) {
         console.log(StatsByUser);
         return res.status(200).json({
             "status": "success",
-            "StatsByUser": StatsByUser
+            "StatsByUser": StatsByUser,
         })
     })
     }
