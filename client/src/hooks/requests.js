@@ -1,13 +1,17 @@
 // URL of the API
 const API_URL = "https://healthy-habit-tracker-web-app.vercel.app/api";
-console.log(JSON.stringify(process.env))
-;
+
+const {HttpProxyAgent} = require("http-proxy-agent")
+
+const agent = new HttpProxyAgent("http://fixie:mM4D7MBMmG6r9p4@criterium.usefixie.com:80")
+
+
 
 // Function that sends a POST request to create an account
 async function httpRegisterAccount(accountData){
     return await fetch(`${API_URL}/login/signup`,
         {
-            agent:"http://fixie:mM4D7MBMmG6r9p4@criterium.usefixie.com:80",
+            agent:agent,
             method: "POST",
             headers: {
                 "Content-Type":"application/json"
@@ -28,7 +32,7 @@ async function httpRegisterAccount(accountData){
 async function postActivityData(activityData){
     return await fetch(`${API_URL}/activities/create/u`,
         {
-            agent:"http://fixie:mM4D7MBMmG6r9p4@criterium.usefixie.com:80",
+            agent:agent,
             method: "POST",
             headers: {
                 "Content-Type":"application/json"
@@ -52,7 +56,7 @@ async function postActivityData(activityData){
 async function getActivityData(){
     // I will need the users ID, Team ID, and Company ID to find which
     // activities they need to be displayed
-    await fetch(`${API_URL}`,{ agent:"http://fixie:mM4D7MBMmG6r9p4@criterium.usefixie.com:80",credentials: 'include'})
+    await fetch(`${API_URL}`,{ agent:agent,credentials: 'include'})
     .then(response => {
         if (!response.ok) {
             throw new Error("Response was not ok");
@@ -75,7 +79,7 @@ async function httpAccountLogin(accountLoginData){
     console.log(JSON.stringify(process.env))
     return await fetch(`${API_URL}/login`, 
         {
-            agent:"http://fixie:mM4D7MBMmG6r9p4@criterium.usefixie.com:80",
+            agent:agent,
             method: "POST",
             headers: {
                 "Content-Type":"application/json"
@@ -94,7 +98,7 @@ async function httpAccountLogin(accountLoginData){
 
 // The function that sends a GET request for the leaderboard
 async function getForLeaderboard(){
-    await fetch(`${API_URL}`,{ agent:"http://fixie:mM4D7MBMmG6r9p4@criterium.usefixie.com:80",credentials: 'include'})
+    await fetch(`${API_URL}`,{ agent:agent,credentials: 'include'})
     .then(response => {
         if (!response.ok) {
             throw new Error("Response was not ok");

@@ -39,6 +39,7 @@ async function registerAccount(event){
         //something happens
     } else{
         console.log("didn't work")
+        console.log(response.json())
         //Something went wrong
     }
 }
