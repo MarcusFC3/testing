@@ -36,7 +36,7 @@ app.use(helmet())
 console.log(JSON.stringify(process.env) + "URL")
 app.use(session({
   secret: 'secret',
-  resave: false,
+  resave: true,
   saveUninitialized: false,
   cookie: {secure: false, sameSite: "none", maxAge:  60 * 60 * 1000},
   store: sqlstore,
