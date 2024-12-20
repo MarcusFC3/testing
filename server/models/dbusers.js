@@ -1,4 +1,8 @@
 "use strict"
+const SocksProxyAgent = require("socks-proxy-agent")
+
+const agent = new SocksProxyAgent("http://fixie:mM4D7MBMmG6r9p4@criterium.usefixie.com:80")
+
 
 const servadminconf = {
     server: "healthyhabittracker.database.windows.net",
@@ -10,7 +14,7 @@ const servadminconf = {
             encrypt: true, 
             trustServerCertificate: true,
             port: 1433,
-            socket: "http://fixie:mM4D7MBMmG6r9p4@criterium.usefixie.com:80"
+            socket: agent
         }
 }
 
