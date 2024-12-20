@@ -20,7 +20,7 @@ const db = require("../models/dbqueries");
 const userRouter = require("../routes/user.router");
 const activitiesRouter = require("../routes/activities.router");
 const loginRouter = require("../routes/login.router");
-
+const loginController = require("../controllers/login.controller")
 const app = express();
 
 const sqlstore = new MssqlStore(adminconf)
