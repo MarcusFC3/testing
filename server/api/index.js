@@ -26,7 +26,7 @@ const app = express();
 const sqlstore = new MssqlStore(adminconf)
 
 
-app.use(cors({credentials: true})); 
+app.use(cors()); 
 app.use(bodyParser.json());
 app.use(express.json());
 app.use(helmet())
