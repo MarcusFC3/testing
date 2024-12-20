@@ -112,36 +112,36 @@ hashedpassword varchar(130) NOT NULL ,
 TeamName varchar(40),
 CompanyID int,
 CONSTRAINT PK_UserID PRIMARY KEY (UserID),
-CONSTRAINT FK_Team FOREIGN KEY (TeamName, CompanyID) REFERENCES Teams,
-REFERENCES Teams (TeamID)
+CONSTRAINT FK_Team FOREIGN KEY (TeamName, CompanyID) REFERENCES Teams (TeamName, CompanyID)
 )
 
 CREATE TABLE CompanyActivities(
     CompanyID int NOT NULL, 
     ActivityID int IDENTITY(1,1),
     ActivityName varchar(30) NOT NULL,
-	RepetitionsOrDuration int NOT NULL,
-	Amount int NOT NULL,
-	Completed BIT NOT NULL Default 'FALSE',
-	ActivityDescription varchar(100),
+    RepetitionsOrDuration int NOT NULL,
+    Amount int NOT NULL,
+    Completed BIT NOT NULL Default 'FALSE',
+    ActivityDescription varchar(100),
     DateCreated DateTime,
     CONSTRAINT PK_CompanyActivites PRIMARY KEY (ActivityID),
     CONSTRAINT FK_CompanyID FOREIGN KEY (CompanyID) REFERENCES Companies (CompanyID),
 )
 
 CREATE TABLE TeamActivities(
-    TeamID int NOT NULL, 
+    TeamName varchar(40) NOT NULL,
+    CompanyID int NOT NULL,
     ActivityID int IDENTITY(1,1),
     ActivityName varchar(30) NOT NULL,
-	RepetitionsOrDuration int NOT NULL,
-	Amount int NOT NULL,
-	Completed BIT NOT NULL Default 'FALSE',
-	ActivityDescription varchar(100),
-	CompanyActivityID int,
+    RepetitionsOrDuration int NOT NULL,
+    Amount int NOT NULL,
+    Completed BIT NOT NULL Default 'FALSE',
+    ActivityDescription varchar(100),
+    CompanyActivityID int,
     DateCreated DateTime,
     CONSTRAINT PK_TeamActivites PRIMARY KEY (ActivityID),
-    CONSTRAINT FK_TeamID FOREIGN KEY (TeamID) REFERENCES Teams (TeamID),
-	CONSTRAINT FK_CompanyActivityID FOREIGN KEY (CompanyActivityID) REFERENCES CompanyActivities (ActivityID)
+    CONSTRAINT FK_TeamID FOREIGN KEY (TeamName, CompanyID) REFERENCES Teams (TeamName, CompanyID),
+    CONSTRAINT FK_CompanyActivityID FOREIGN KEY (CompanyActivityID) REFERENCES CompanyActivities (ActivityID)
 )
 
 
@@ -150,15 +150,15 @@ CREATE TABLE UserActivities(
     UserID int NOT NULL, 
     ActivityID int IDENTITY(1,1),
     ActivityName varchar(30) NOT NULL,
-	RepetitionsOrDuration int NOT NULL,
-	Amount int NOT NULL,
-	Completed BIT NOT NULL Default 'FALSE',
-	ActivityDescription varchar(100),
-	TeamActivityID int,
+    RepetitionsOrDuration int NOT NULL,
+    Amount int NOT NULL,
+    Completed BIT NOT NULL Default 'FALSE',
+    ActivityDescription varchar(100),
+    TeamActivityID int,
     DateCreated DateTime,
     CONSTRAINT PK_UserActivites PRIMARY KEY (ActivityID),
     CONSTRAINT FK_UserID FOREIGN KEY (UserID) REFERENCES Users (UserID),
-	CONSTRAINT FK_TeamActivityID FOREIGN KEY (TeamActivityID) REFERENCES TeamActivities (ActivityID)
+    CONSTRAINT FK_TeamActivityID FOREIGN KEY (TeamActivityID) REFERENCES TeamActivities (ActivityID)
 )
 
 ALTER TABLE Users

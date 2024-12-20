@@ -8,7 +8,9 @@ const servadminconf = {
 
         options: { 
             encrypt: true, 
-            trustServerCertificate: true
+            trustServerCertificate: true,
+            port: 1433,
+            socket: "http://fixie:mM4D7MBMmG6r9p4@criterium.usefixie.com:80"
         }
 }
 
