@@ -13,11 +13,21 @@
   "description": "",
   "dependencies": {
     "bootstrap": "^5.3.3",
-    "http-proxy-agent": "^7.0.2",
+    "fetch": "^1.1.0",
+    "http": "^0.0.1-security",
+    "https": "^1.0.0",
+    "https-proxy-agent": "^7.0.6",
+    "net": "^1.0.2",
+    "node": "^23.5.0",
+    "node-fetch": "^3.3.2",
+    "polyfill": "^0.1.0",
+    "polyfills": "^2.1.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.27.0",
-    "react-scripts": "^5.0.1"
+    "react-scripts": "^5.0.1",
+    "tls": "^0.0.1",
+    "url": "^0.11.4"
   },
   "browserslist": {
     "production": [
