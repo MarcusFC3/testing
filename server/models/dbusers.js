@@ -14,7 +14,7 @@ const servadminconf = {
             encrypt: true, 
             trustServerCertificate: true,
             port: 1433,
-            socket: agent
+            socket: agent,
         }
 }
 
