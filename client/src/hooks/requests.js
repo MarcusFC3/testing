@@ -1,5 +1,6 @@
 // URL of the API
-const API_URL = "https://" +process.env.VERCEL_URL;
+const API_URL = "https://healthy-habit-tracker-web-app.vercel.app/api";
+;
 
 // Function that sends a POST request to create an account
 async function httpRegisterAccount(accountData){
@@ -9,7 +10,8 @@ async function httpRegisterAccount(accountData){
             headers: {
                 "Content-Type":"application/json"
             } ,
-            body: JSON.stringify(accountData)
+            body: JSON.stringify(accountData),
+            credentials: 'include'
         }
     ).catch(
         (error) => { 
@@ -28,7 +30,16 @@ async function postActivityData(activityData){
             headers: {
                 "Content-Type":"application/json"
             } ,
-            body: JSON.stringify(activityData)
+            body: JSON.stringify(activityData),
+            credentials: 'include'
+        }
+    )
+    .then( (response) => {
+        console.log(response.json())
+    })
+    .catch(
+        (error) => { 
+            console.log( error)
         }
     )
 }
@@ -57,13 +68,15 @@ async function getActivityData(){
 
 // The function that sends a POST request for the login page
 async function httpAccountLogin(accountLoginData){
+    console.log(API_URL)
     return await fetch(`${API_URL}/login`, 
         {
             method: "POST",
             headers: {
                 "Content-Type":"application/json"
             },
-            body: JSON.stringify(accountLoginData)
+            body: JSON.stringify(accountLoginData),
+            credentials: 'include'
         }
     ).catch(
         (error) => { 
@@ -93,4 +106,8 @@ async function getForLeaderboard(){
     )
 }
 
-export {httpRegisterAccount, httpAccountLogin, postActivityData}
+export {httpRegisterAccount, 
+    httpAccountLogin, 
+    postActivityData, 
+    getForLeaderboard, 
+    getActivityData}

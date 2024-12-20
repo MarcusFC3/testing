@@ -1,15 +1,11 @@
 {
   "name": "server",
-  "engines": {
-        "node": "20.x"
-      },
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "nodemon src/server.js",
-    "start": "PORT=8000 node server.js",
-    "vercel-build": "echo starting..."
+    "watch": "nodemon server.js",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
@@ -30,7 +26,6 @@
     "nodemailer": "^6.9.16",
     "passport": "^0.7.0",
     "passport-local": "^1.0.0",
-    "perfect-express-sanitizer": "^2.0.2",
-    "vercel": "^39.2.2"
+    "perfect-express-sanitizer": "^2.0.2"
   }
 }

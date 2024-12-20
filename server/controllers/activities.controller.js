@@ -2,7 +2,6 @@ const express = require("express");
 const bcrypt = require("bcrypt");
 const sql = require("mssql");
 const { adminconf } = require("../models/dbusers");
-const { DATE } = require("mysql/lib/protocol/constants/types");
 
 
 //personal activities
@@ -266,23 +265,103 @@ function createCompanyActivity(req, res) {
         )
     }
 }
-function removeCompanyActivity(req, res){
-
-}
-function removeTeamActvitiy(req, res){
-
-}
-function removeUserActivity(req,res){
-    let time = req.body.time 
-    let date = new Date(time)
-    //chage date to datetime in activities
-}
-function deincrementAmount(req,res){
-    //if amount = 0 set to completed
-}
-function setCompleted(req, res){
-
-}
+// function removeCompanyActivity(req, res){
+//     let time = req.body.time 
+//     let date = new Date(time)
+//     //chage date to datetime in activities in azure
+//      async function deleteTeamActivity(CompanyID, time){
+//         const connection = sql.connect(adminconf);
+//         const transaction = new sql.transaction(connection)
+//         const request = transaction.request();
+//         transaction.begin()
+//         let companyActivityID;
+//         let teamActivityID;
+//         try{
+            
+//         request.input("time",sql.DateTime,time)
+//         request.input("companyID",sql.Int,companyID)
+//         await request.query("SELECT ActivityID FROM CompanyActivities WHERE DateCreated = @time AND CompanyID = @companyID").then((result)=>{
+//            companyActivitiyID = result.recordset[0]["ActivityID"]
+//         })
+//         request.input("companyActivityID", sql.Int, companyActivityID);
+            
+//          await request.query("SELECT ActivityID FROM TeamActivities WHERE CompanyActivityID = @companyActivityID").then((result)=>{
+//            teamActivitiyID = result.recordset[0]["ActivityID"]
+//         })
+//         request.input("teamActivityID", sql.Int, teamActivityID);
+//         await request.query("DELETE TeamActivities WHERE CompanyActivityID = @companyActivityID")
+//         await request.query("DELETE UserActivites WHERE TeamActivityID = @teamActivityID")
+//         transaction.commit();
+//         return "success!"
+//         }
+//         catch (e){
+//             transaction.rollback();
+//             return e;
+//         }
+//     }
+// }
+// function removeTeamActvitiy(req, res){
+//     let time = req.body.time 
+//     let date = new Date(time)
+//     //chage date to datetime in activities in azure
+//     async function deleteTeamActivity(teamName,CompanyID, time){
+//         const connection = sql.connect(adminconf);
+//         const transaction = new sql.transaction(connection)
+//         const request = transaction.request();
+//         transaction.begin()
+//         let activityID;
+//         try{
+            
+//         request.input("teamName",sql.VarChar,teamName)
+//         request.input("time",sql.DateTime,time)
+//         request.input("companyID",sql.Int,companyID)
+//         await request.query("SELECT ActivityID FROM TeamActivities WHERE DateCreated = @time AND TeamName = @teamName AND CompanyID = @companyID").then((result)=>{
+//            activitiyID = result.recordset[0]["ActivityID"]
+//         })
+//         request.input("activityID", sql.Int, activityID);
+//         await request.query("DELETE TeamActivities WHERE ActivityID = @activityID")
+//         await request.query("DELETE UserActivites WHERE TeamActivityID = @activityID")
+//         transaction.commit();
+//         return "success!"
+//         }
+//         catch (e){
+//             transaction.rollback();
+//             return e;
+//         }
+//     }
+//     deleteTeamActivity(req.User.TeamName, req.User.CompanyID, time)
+// }
+// function removeUserActivity(req,res){
+//     let time = req.body.time 
+//     let date = new Date(time)
+//     //chage date to datetime in activities in azure
+//     async function deleteUserActivity(userID, time){
+//         const connection = sql.connect(adminconf);
+//         const request = connection.request();
+//         request.input("userID",sql.Int,userID)
+//         request.input("time",sql.Int,time)
+//         return await request.query("DELETE UserActivities WHERE UserID = @userID AND DateCreated = @time")
+//     }
+    
+// }
+// function deincrementAmount(req,res){
+//     let time = req.body.time
+//     let amount = req.body.amount
+//     let date = new Date(time)
+//     //chage date to datetime in activities in azure
+//     async function deleteUserActivity(userID, time, amount){
+//         const connection = sql.connect(adminconf);
+//         const request = connection.request();
+//         request.input("userID",sql.Int,userID)
+//         request.input("time",sql.Int,time)
+//         request.input("amount", sql.Int,amount)
+//         return await request.query("UPDATE UserActivities SET Amount = @amount WHERE UserID = @userID AND DateCreated = @time")
+//     }
+// }
+// function setCompleted(req, res){
+//     let time = req.body.time 
+//     let date = new Date(time)
+// }
 
 
 
@@ -293,6 +372,5 @@ module.exports = {
     viewTopTeams,
     viewTopUsers,
     getUserActivityData,
-    removeUserActivity,
 
 }

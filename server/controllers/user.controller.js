@@ -11,6 +11,7 @@ function getUserData(req, res){
    const userID = req.session.passport.user.UserID;
    dbqueries.get.UserInfoFromUserID(userID).then(
       (result) =>{
+         console.log(JSON.stringify(result));
          return result.recordset[0]
       }
    )

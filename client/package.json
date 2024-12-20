@@ -5,7 +5,7 @@
   "scripts": {
     "start": "react-scripts start",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build" : "BUILD_PATH=../server/public react-scripts build"
+    "build" : "react-scripts build"
   },
   "keywords": [],
   "author": "",
@@ -17,7 +17,7 @@
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.27.0",
     "react-scripts": "^5.0.1"
-  },
+  },  
   "browserslist": {
     "production": [
       ">0.2%",

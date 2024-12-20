@@ -313,6 +313,10 @@ function login(req, res, next) {
         if (correctPassword) {
           console.log("Correct password input!");
           next();
+          // res.status(200).json({
+          //   status: "success!",
+          //   message: "User has successfully logged in"
+          // });
         } else {
           return res.status(400).json({
             status: "Failure",

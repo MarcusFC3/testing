@@ -19,14 +19,18 @@ const loginRouter = express.Router();
 
 
 
-loginRouter.post("/", loginController.login, passport.authenticate('local'), (req,res) =>{
-    console.log(req.session.message + "apijsdoiajhodipaowidnbwoiadfb ou llalalallala");
+loginRouter.post("/", loginController.login, passport.authenticate('local'), (req, res) => {
+    // This code runs after authentication has been completed
+  
+    console.log("Authentication successful");
+  
+    // You can now safely send a response, since the user has been authenticated
     return res.status(200).json({
-        status: "success!",
-        message: "User has successfully logged in!"
-    })
+      message: "Authentication successful",
+      user: req.user  // You can access the authenticated user from req.user
+    });
+  });
 
-})
 loginRouter.post("/pwdreset", loginController.passwordReset)
 
 

@@ -4,9 +4,9 @@ const sql = require("mssql");
 const { adminconf } = require("../models/dbusers")
 const get = {
     UserInfoFromUserID : async function getNamesFromUserID(userID) {
-        const connectionPool = await sql.connect(adminconf);
-        let request = await connectionPool.request();
-        request = await request.input("userID", sql.Int,userID);
+        const connection = await sql.connect(adminconf);
+        let request =  connection.request();
+        request = request.input("userID", sql.Int,userID);
         return await request.query("SELECT firstName, lastName, username, TeamName, CompanyID, isTeamLeader, isCompanyLeader FROM Users WHERE UserID = @userID")
     },
     UserInfoFromEmail : async function getNamesFromUseremail(email) {

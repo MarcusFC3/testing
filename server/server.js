@@ -7,13 +7,13 @@ const sql = require("mssql");
 const fs = require("fs");
 const path = require("path");
 
-const PORT = 8000;
+const PORT = process.env.PORT || 3000;;
+export default app;
+// const server = https.createServer({
+//     key: fs.readFileSync(path.join(__dirname, ".." , "key.pem")),
+//     cert: fs.readFileSync(path.join(__dirname,  ".." , "cert.pem")),
+// }, app); 
 
-const server = https.createServer({
-    key: fs.readFileSync(path.join(__dirname, ".." , "key.pem")),
-    cert: fs.readFileSync(path.join(__dirname,  ".." , "cert.pem")),
-}, app); 
-
-server.listen( () => {
-    console.log("Server is listening on port " + PORT);
-}) 
+// server.listen(PORT, () => {
+//     console.log("Server is listening on port " + PORT);
+// })  

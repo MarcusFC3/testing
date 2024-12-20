@@ -1,12 +1,12 @@
 
-export default function LeaderboardRow() {
+export default function LeaderboardRow(props) {
 
     return (
         <tr >
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>{props.Rank}</td>
+            <td>{props.Team}</td>
+            <td>{props.Company}</td>
+            <td>{props.ActivityComplete}</td>
         </tr>
     )
 }

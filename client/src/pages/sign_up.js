@@ -48,6 +48,11 @@ export default function signUp() {
                         />
                     </p>
 
+                    {/* To Do
+                    Make the user enter a good password with an 
+                    uppercase letter, lowercase letter, and number
+                     */}
+
                     <p>
                         <label htmlFor="password">Password: </label>
                         <input 

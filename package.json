@@ -20,7 +20,6 @@
     "bcrypt": "^5.1.1",
     "build": "^0.1.4",
     "create-react-app": "^1.2.1",
-    "mssql-session-store": "^1.0.0",
-    "vercel": "^39.2.2"
+    "mssql-session-store": "^1.0.0"
   }
 }
