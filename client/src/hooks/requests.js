@@ -75,8 +75,7 @@ async function httpAccountLogin(accountLoginData){
             headers: {
                 "Content-Type":"application/json"
             },
-            body: JSON.stringify(accountLoginData),
-            credentials: 'include'
+            body: JSON.stringify(accountLoginData)
         }
     ).catch(
         (error) => { 
