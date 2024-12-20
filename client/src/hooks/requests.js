@@ -1,5 +1,6 @@
 // URL of the API
 const API_URL = "https://healthy-habit-tracker-web-app.vercel.app/api";
+console.log(JSON.stringify(process.env))
 ;
 
 // Function that sends a POST request to create an account
@@ -69,6 +70,7 @@ async function getActivityData(){
 // The function that sends a POST request for the login page
 async function httpAccountLogin(accountLoginData){
     console.log(API_URL)
+    console.log(JSON.stringify(process.env))
     return await fetch(`${API_URL}/login`, 
         {
             method: "POST",
