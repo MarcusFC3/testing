@@ -26,7 +26,7 @@ const app = express();
 const sqlstore = new MssqlStore(adminconf)
 
 
-app.use(cors()); 
+app.use(cors({origin: "https://healthy-habit-tracker-web-app.vercel.app/", credentials: true})); 
 app.use(bodyParser.json());
 app.use(express.json());
 app.use(helmet())
@@ -95,7 +95,6 @@ passport.deserializeUser((user, done)=>{
   try{
   console.log("DESERIALIZING" )
   let userID = user["UserID"]
-  console.log("DESERIALIZING" + user[5])
    db.get.UserInfoFromUserID(userID).then(
      (result) =>{
       console.log("DESERIALIZING 2222222")
