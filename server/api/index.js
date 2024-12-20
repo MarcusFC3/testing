@@ -39,7 +39,7 @@ app.use(session({
   resave: true,
   proxy: true,
   saveUninitialized: false,
-  cookie: {secure: true, sameSite: "true", maxAge:  60 * 60 * 1000},
+  cookie: {secure: true, sameSite: "none", maxAge:  60 * 60 * 1000},
   store: sqlstore,
 
 }));
