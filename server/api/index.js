@@ -37,7 +37,7 @@ app.use(session({
   secret: 'secret',
   resave: false,
   saveUninitialized: false,
-  cookie: {secure: true, sameSite: "none", maxAge:  60 * 60 * 1000},
+  cookie: {secure: false, sameSite: "none", maxAge:  60 * 60 * 1000},
   store: sqlstore,
 
 }));
