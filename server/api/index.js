@@ -181,9 +181,10 @@ app.get("/logout", (req, res) =>{
   });
 
 })
-module.exports = (req, res)=>{
-  app(req, res);
-}
+const PORT = process.env.PORT || 3000;;
+app.listen(PORT, ()=>{
+  console.log("Server started listening on port " + PORT)
+})
 // fetch(
 //   "login",
   
