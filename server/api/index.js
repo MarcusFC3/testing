@@ -37,8 +37,9 @@ console.log(JSON.stringify(process.env) + "URL")
 app.use(session({
   secret: 'secret',
   resave: true,
+  proxy: true,
   saveUninitialized: false,
-  cookie: {secure: false, sameSite: "none", maxAge:  60 * 60 * 1000},
+  cookie: {secure: true, sameSite: "none", maxAge:  60 * 60 * 1000},
   store: sqlstore,
 
 }));
