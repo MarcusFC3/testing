@@ -21,12 +21,12 @@
     "express": "^4.21.1",
     "express-session": "^1.18.1",
     "helmet": "^8.0.0",
+    "http-proxy-agent": "^7.0.2",
     "morgan": "^1.10.0",
     "mssql": "^11.0.1",
     "nodemailer": "^6.9.16",
     "passport": "^0.7.0",
     "passport-local": "^1.0.0",
-    "perfect-express-sanitizer": "^2.0.2",
-    "socks-proxy-agent": "^8.0.5"
+    "perfect-express-sanitizer": "^2.0.2"
   }
 }
