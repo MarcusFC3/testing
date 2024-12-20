@@ -175,7 +175,9 @@ app.use("/login", loginRouter);
 
 
 //login routes
-app.post("/", loginController.login, passport.authenticate('local'), (req, res) => {
+app.post("/api/login", (req, res, next) =>{
+  res.send("Move naw naw waht?")
+}, passport.authenticate('local'), (req, res) => {
     // This code runs after authentication has been completed
   
     console.log("Authentication successful");
