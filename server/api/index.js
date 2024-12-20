@@ -170,9 +170,9 @@ app.get("/asd", (req, res)=>{
 
 })
 
-app.use("/activities", checkLoggedIn, activitiesRouter)
-app.use("/login", loginRouter);
-app.use("/user", userRouter);
+app.use("/api/activities", checkLoggedIn, activitiesRouter)
+app.use("/api/login", loginRouter);
+app.use("/api/user", userRouter);
 app.get("/api", (req, res) => {return res.send("hyecuh")})    
 
 app.get("/logout", (req, res) =>{
