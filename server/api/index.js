@@ -95,6 +95,7 @@ passport.deserializeUser((user, done)=>{
   try{
   console.log("DESERIALIZING" )
   let userID = user["UserID"]
+  console.log("DESERIALIZING" + user[5])
    db.get.UserInfoFromUserID(userID).then(
      (result) =>{
       console.log("DESERIALIZING 2222222")
@@ -116,9 +117,6 @@ passport.deserializeUser((user, done)=>{
 }
 })
 
-
-app.use(cors())
-app.options("*", cors())
 
 function checkLoggedIn(req, res, next){
   console.log(req.session)
